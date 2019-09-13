@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return config('database.connections.mysql');
+   return config('app.name');
 });
