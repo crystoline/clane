@@ -1,6 +1,6 @@
-FROM php:7-fpm
+FROM php:7.2-fpm
 
-RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client \
-    && docker-php-ext-install mcrypt pdo_mysql
+RUN apt-get update && apt-get install -y libmcrypt-dev
+RUN docker-php-ext-install mbstring mysqli pdo pdo_mysql shmop
 
 WORKDIR /var/www
